@@ -45,4 +45,4 @@ CREATE TABLE activities (
   category TEXT,
   description TEXT,
   timestamp TEXT
-)
+);
