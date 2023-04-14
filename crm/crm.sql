@@ -19,20 +19,19 @@ CREATE TABLE staff (
   phone_number TEXT
 );
 
-CREATE TABLE contact (
+CREATE TABLE contacts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   first_name TEXT,
   last_name TEXT,
   title TEXT,
-  company_id INTEGER,
+  companies_id INTEGER,
   email TEXT,
   phone_number TEXT
 );
 
-CREATE TABLE company (
+CREATE TABLE companies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   company_name TEXT,
-  industry TEXT,
   address TEXT,
   relationship_start TEXT,
   staff_id INTEGER
@@ -41,8 +40,20 @@ CREATE TABLE company (
 CREATE TABLE activities (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   staff_id INTEGER,
-  contact_ID INTEGER,
+  contacts_ID INTEGER,
   category TEXT,
   description TEXT,
   timestamp TEXT
 );
+
+CREATE TABLE industry_memberships (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  companies_id INTEGER,
+  industries_id INTEGER,
+  name TEXT
+)
+
+CREATE TABLE industries (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+)
