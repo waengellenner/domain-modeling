@@ -14,26 +14,27 @@ CREATE TABLE users (
 
 CREATE TABLE photos (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  user_id INTEGER,
+  user_id INTEGER, --relationship
+  image_url TEXT,
   timestamp TEXT
 );
 
 CREATE TABLE likes (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  photo_id INTEGER,
-  liker_user_id INTEGER
+  photo_id INTEGER, --relationship
+  liker_user_id INTEGER --relationship
 );
 
 CREATE TABLE comments (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  photo_id INTEGER,
-  commenter_user_id INTEGER,
+  photo_id INTEGER, --relationship
+  commenter_user_id INTEGER, --relationship
   comment_text TEXT
 );
 
 CREATE TABLE relationships (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  follower_user_id INTEGER,
-  followed_user_id INTEGER,
+  follower_user_id INTEGER, --relationship
+  followed_user_id INTEGER, --relationship
   timestamp TEXT
 );
